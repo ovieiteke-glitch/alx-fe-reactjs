@@ -31,6 +31,13 @@ function App() {
     <WelcomeMessage />
         
       </div>
+      <div>
+        <div>
+        <Header />
+        <MainContent />
+        <Footer />
+      </div>
+      </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
