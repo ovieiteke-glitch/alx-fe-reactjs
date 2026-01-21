@@ -1,6 +1,6 @@
 function MainContent() {
     return (
-        <main>
+        <main style= {{backgroundColor: "green",border: '2px solid white', }}>
             <p>I love to visit New York, Paris, and Tokyo.</p>
         </main>
     );
