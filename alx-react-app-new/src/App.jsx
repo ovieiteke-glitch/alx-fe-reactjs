@@ -1,4 +1,4 @@
-import UserProfile from './components/UserProfile'
+import UserProfile from './UserProfile'
 import Footer from './Footer'
 import MainContent from './MainContent'
 import Header from './Header'
