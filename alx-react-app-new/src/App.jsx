@@ -1,13 +1,13 @@
-import UserProfile from './UserProfile'
-import Footer from './Footer'
-import MainContent from './MainContent'
-import Header from './Header'
+import UserProfile from './components/UserProfile'
+import Footer from './components/Footer'
+import MainContent from './components/MainContent'
+import Header from './components/Header'
 import WelcomeMessage from './components/WelcomeMessage'
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Counter from './Counter'
+import Counter from './components/Counter'
 
 
 function App() {
