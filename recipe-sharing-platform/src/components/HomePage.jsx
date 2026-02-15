@@ -1,63 +1,54 @@
 import React from "react";
 import React, { useState, useEffect } from 'react'; 
-import DataFetcher from "../App";
 
 function DataFetcher() {
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
+  const [data, setData] = useState(null); // Initialize as null or [] if it's an array
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    useEffect(() => {
-            const fetchData = async () => {
-                try {
-                    const response = await fetch('./data.json');
-                    const jsonData = await response.json();
-                    setData(jsonData);
-                    setLoading(false);
-                } catch (error) {
-                    console.error("Error fetching data: ", error);
-                    setLoading(false);
-                }
-            };
-            fetchData();
-        }, []);
-}
-if (isLoading) {
-    return <div>Loading data...</div>;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Fetch from the public directory
+        const response = await fetch('./data.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const jsonData = await response.json();
+        setData(jsonData);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []); // The empty array ensures this effect runs only once after the initial render
+
+  if (loading) {
+    return <div>Loading...</div>;
   }
 
   if (error) {
     return <div>Error: {error}</div>;
   }
 
+  // Render the data once available
   return (
     <div>
       <h1>Data Loaded:</h1>
-      {/* Render the data (e.g., as a list or table) */}
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      {/* Conditionally render based on your JSON structure */}
+      {data && Array.isArray(data) ? (
+        <ul>
+          {data.map((item) => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>Data loaded, but not an array or structure is different.</p>
+      )}
     </div>
   );
-
-
-
-function Homepage() {
-    return (
-        <div className="flex items-center justify-center min-h-screen bg-red-100">
-            <header>
-                <h1>Welcome to my page!</h1>
-            </header>
-            <body>
-                <p>Hi I am Ovie and this is my page.</p>
-                <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
-                    <DataFetcher />
-                </div>
-                
-            </body>
-            <footer>
-                <p>&copy Oveewrites</p>
-            </footer>
-        </div>
-    )
 }
 
-
-export default Homepage;
+export default DataFetcher;
