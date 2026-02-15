@@ -3,7 +3,7 @@ import DataFetcher from "../App";
 
 function Homepage() {
     return (
-        <div className="flex items-center justify-center min-h-screen bg-red-100">
+        <div className="flex items-center justify-center min-h-screen bg-blue-100">
             <header>
                 <h1>Welcome to my page!</h1>
             </header>
