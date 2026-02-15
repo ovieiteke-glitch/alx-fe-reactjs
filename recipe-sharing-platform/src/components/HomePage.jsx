@@ -52,3 +52,19 @@ function DataFetcher() {
 }
 
 export default DataFetcher;
+
+function HomePage() {
+    return (
+    <div className="homepage-container flex items-center justify-center min-h-screen bg-gray-100">
+      <header>
+        <h1>Welcome to My Website!</h1>
+      </header>
+      <section>
+        <p>This is the homepage content.</p>
+      </section>
+      <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+        <DataFetcher />
+      </div>
+    </div>
+  );
+}
