@@ -62,7 +62,7 @@ function HomePage() {
       <section>
         <p>This is the homepage content.</p>
       </section>
-      <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+      <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-md hover:text-blue-800">
         <DataFetcher />
       </div>
     </div>
