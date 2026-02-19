@@ -1,21 +1,16 @@
-function DataFetcher() {
-  const [data, setData] = useState([]);
-      const [loading, setLoading] = useState(true);
-  
-      useEffect(() => {
-              const fetchData = async () => {
-                  try {
-                      const response = await fetch('./data.json');
-                      const jsonData = await response.json();
-                      setData(jsonData);
-                      setLoading(false);
-                  } catch (error) {
-                      console.error("Error fetching data: ", error);
-                      setLoading(false);
-                  }
-              };
-              fetchData();
-            }, []);
-          };
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './HomePage';
+import RecipeDetail from './components/RecipeDetail';
 
-      export default DataFetcher;
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/recipe/:id" element={<RecipeDetail />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App

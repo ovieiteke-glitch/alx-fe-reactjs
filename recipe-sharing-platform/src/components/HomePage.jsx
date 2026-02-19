@@ -51,7 +51,6 @@ function DataFetcher() {
   );
 }
 
-export default DataFetcher;
 
 function HomePage() {
     return (
@@ -68,3 +67,4 @@ function HomePage() {
     </div>
   );
 }
+export default HomePage;
