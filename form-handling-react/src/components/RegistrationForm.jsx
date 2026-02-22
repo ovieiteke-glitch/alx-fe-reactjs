@@ -9,18 +9,17 @@ const ControlledForm = () => {
 
     const validateForm = () => {
          const newErrors = {};
-        if (!username.trim()) { // Use .trim() to check for only whitespace
+        if (!username) { 
         newErrors.username = 'Username is required';
     }
-        if (!email.trim()) {
+        if (!email) {
         newErrors.email = 'Email is required';
     }
-        if (!password.trim()) {
+        if (!password) {
         newErrors.password = 'Password is required';
     } 
         return newErrors;
     };
-
 
 
     const handleSubmit = (e) => {
