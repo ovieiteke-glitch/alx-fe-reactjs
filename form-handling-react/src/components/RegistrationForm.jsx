@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const ControlledForm = () => {
-    const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+    const [formData, setFormData] = useState({ username: '', email: '', password: '' });
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({ ...prevState, [name]: value }));
@@ -16,7 +16,7 @@ const ControlledForm = () => {
         <form onSubmit={handleSubmit}>
             <input
                 type="text"
-                name="name"
+                name="username"
                 value={formData.name}
                 onChange={handleChange}
             />

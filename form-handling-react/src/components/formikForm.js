@@ -17,7 +17,7 @@ const FormikForm = () => (
     >
         {() => (
             <Form>
-                <Field type="text" name="name" />
+                <Field type="text" name="username" />
                 <ErrorMessage name="name" component="div" />
                 <Field type="email" name="email" />
                 <ErrorMessage name="email" component="div" />
