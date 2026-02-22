@@ -17,7 +17,7 @@ const ControlledForm = () => {
             <input
                 type="text"
                 name="username"
-                value={formData.name}
+                value={formData.username}
                 onChange={handleChange}
             />
             <input
